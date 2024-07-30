@@ -92,7 +92,47 @@ ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integ
 
 ## Directory Structure
 
+## Project Structure
 
+The project is organized into the following directories:
+
+| Directory                    | Description                                      |
+|------------------------------|--------------------------------------------------|
+| ECommerceApp.Core/           | Core domain models and interfaces.               |
+| ├── Models/                  | Contains entity models.                          |
+| ├── Interfaces/              | Contains repository interfaces.                  |
+| ├── Result.cs                | Utility class for operation results.             |
+| └── ECommerceApp.Core.csproj | Core project file.                               |
+|                              |                                                  |
+| ECommerceApp.Infrastructure/ | Implementation of repositories and database context. |
+| ├── Repositories/            | Repository implementations.                      |
+| ├── Services/                | Infrastructure services.                         |
+| ├── Data/                    | Database context and configurations.             |
+| │   ├── AppDbContext.cs      | Main database context.                           |
+| │   ├── Configurations/      | Entity configurations.                           |
+| └── ECommerceApp.Infrastructure.csproj | Infrastructure project file.           |
+|                              |                                                  |
+| ECommerceApp.Application/    | Application layer services, DTOs, and mapping profiles. |
+| ├── Interfaces/              | Application service interfaces.                  |
+| ├── Services/                | Application service implementations.             |
+| ├── Dtos/                    | Data Transfer Objects.                           |
+| ├── Mapping/                 | AutoMapper profiles.                             |
+| │   ├── MappingApp.cs        | Main mapping profile.                            |
+| └── ECommerceApp.Application.csproj | Application project file.                 |
+|                              |                                                  |
+| ECommerceApp.Web/            | Web application, including controllers, views, and static files. |
+| ├── Controllers/             | MVC controllers.                                 |
+| ├── Views/                   | Razor views.                                     |
+| ├── Models/                  | View models.                                     |
+| ├── wwwroot/                 | Static files (CSS, JS, images, etc.).            |
+| │   ├── css/                 | Stylesheets.                                     |
+| │   ├── js/                  | JavaScript files.                                |
+| │   ├── lib/                 | Library files.                                   |
+| │   └── images/              | Images.                                          |
+| ├── Components/              | View components.                                 |
+| ├── Program.cs               | Application entry point.                         |
+| ├── appsettings.json         | Configuration file.                              |
+| └── ECommerceApp.Web.csproj  | Web project file.                                |
 
 
 ## License
