@@ -92,10 +92,6 @@ ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integ
 
 ## Directory Structure
 
-## Project Structure
-
-The project is organized into the following directories:
-
 | Directory                    | Description                                      |
 |------------------------------|--------------------------------------------------|
 | ECommerceApp.Core/           | Core domain models and interfaces.               |
