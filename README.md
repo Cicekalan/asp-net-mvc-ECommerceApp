@@ -1,6 +1,7 @@
 # ECommerceApp
 
-ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integrated with the Iyzico payment gateway.
+ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integrated with the Iyzico payment gateway. This application supports both seller and customer functionalities, providing a comprehensive platform for managing products, orders, and payments.
+
 
 ## Technologies Used
 
@@ -55,16 +56,27 @@ ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integ
 
 ## Usage
 
-- Register a new user or log in with an existing account.
+- Register a new user or log in with an existing account. The application includes 6 predefined users created using data seeding. You can use these accounts to test the application:
+
+    | Username           | Password      | First Name | Last Name    | 
+    |--------------------|---------------|------------|--------------|
+    | user1@example.com  | Password123*  | John       | Doe          |
+    | user2@example.com  | Password123*  | Jane       | Smith        | 
+    | user3@example.com  | Password123*  | Michael    | Johnson      | 
+    | user4@example.com  | Password123*  | Emily      | Davis        | 
+    | user5@example.com  | Password123*  | Daniel     | Wilson       | 
+    | user6@example.com  | Password123*  | Sophia     | Martinez     |
+  
 - Browse products, add them to the cart, and proceed to checkout.
 - Make payments securely using the Iyzico payment gateway.
   
 ## Example Screenshots
 
-![Homepage](path/to/homepage-screenshot.png)
-![Product Page](path/to/product-page-screenshot.png)
-![Cart Page](path/to/cart-page-screenshot.png)
-![Checkout Page](path/to/checkout-page-screenshot.png)
+
+- Product Page: ![Product Page](screenshots/Product.png)
+- MyOrder Page: ![MyOrder Page](screenshots/MyOrder.png)
+- ProductSold Page: ![ProductSold Page](screenshots/ProductsSold.png)
+- ShoppingCart Page: ![ShoppingCart Page](screenshots/ShoppingCart.png)
 
 ## Sample Cards for Iyzico
 
