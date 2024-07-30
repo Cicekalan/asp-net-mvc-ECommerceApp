@@ -95,40 +95,41 @@ ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integ
 ECommerceApp/
 │
 ├── ECommerceApp.Core/
-│ ├── Models/
-│ ├── Interfaces/
-│ ├── Result.cs
-│ └── ECommerceApp.Core.csproj
+│   ├── Models/
+│   ├── Interfaces/
+│   ├── Result.cs
+│   └── ECommerceApp.Core.csproj
 │
 ├── ECommerceApp.Infrastructure/
-│ ├── Repositories/
-│ ├── Services/
-│ ├── Data/
-│ │ ├── AppDbContext.cs
-│ │ ├── Configurations/
-│ └── ECommerceApp.Infrastructure.csproj
+│   ├── Repositories/
+│   ├── Services/
+│   ├── Data/
+│   │   ├── AppDbContext.cs
+│   │   ├── Configurations/
+│   └── ECommerceApp.Infrastructure.csproj
 │
 ├── ECommerceApp.Application/
-│ ├── Interfaces/
-│ ├── Services/
-│ ├── Dtos/
-│ ├── Mapping/
-│ │ └── MappingApp.cs
-│ └── ECommerceApp.Application.csproj
+│   ├── Interfaces/
+│   ├── Services/
+│   ├── Dtos/
+│   ├── Mapping/
+│   │   └── MappingApp.cs
+│   └── ECommerceApp.Application.csproj
 │
 ├── ECommerceApp.Web/
-│ ├── Controllers/
-│ ├── Views/
-│ ├── Models/
-│ ├── wwwroot/
-│ │ ├── css/
-│ │ ├── js/
-│ │ ├── lib/
-│ │ └── images/
-│ ├── Components/
-│ ├── Program.cs
-│ ├── appsettings.json
-│ └── ECommerceApp.Web.csproj
+│   ├── Controllers/
+│   ├── Views/
+│   ├── Models/
+│   ├── wwwroot/
+│   │   ├── css/
+│   │   ├── js/
+│   │   ├── lib/
+│   │   └── images/
+│   ├── Components/
+│   ├── Program.cs
+│   ├── appsettings.json
+│   └── ECommerceApp.Web.csproj
+
 
 
 ## License
