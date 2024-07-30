@@ -1,0 +1,72 @@
+@model ProductByReviewDetailViewModel
+
+@{
+    ViewBag.Title = Model.Product.Name;
+}
+
+<link rel="stylesheet" href="~/css/ProductDetail.css" />
+<div class="product-detail-container">
+    <div class="product-detail">
+        <img src="@Model.Product.ImageUrl" alt="@Model.Product.Name" class="product-image">
+        <div class="product-info">
+            <div class="seller-info">
+                <img src="@Model.Product.Seller.ProfilePictureUrl" class="profile-picture rounded-circle"
+                    alt="@Model.Product.Seller.FullName's Profile Picture">
+                <p><strong>Seller: </strong>@Model.Product.Seller.FullName</p>
+            </div>
+            <h2>@Model.Product.Name</h2>
+            <p>@Model.Product.Description</p>
+            <p><strong>Price: </strong>@Model.Product.Price.ToString("C")</p>
+            <p><strong>Category: </strong>@Model.Product.Category.Name</p>
+            <div class="product-actions">
+                <a href="javascript:history.back()" class="btn back-btn">Back</a>
+                <a class="btn buy-btn">Buy Now</a>   <!-- Not yet implamented  --> 
+                <a class="btn btn-success btn-half-size" onclick="addToCart(@Model.Product.ProductId)">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="reviews-section">
+    <h3>Customer Reviews</h3>
+
+    @if (Model.Product?.Reviews != null && Model.Product.Reviews.Any())
+    {
+        @foreach (var review in Model.Product.Reviews)
+        {
+            <div class="card review-card mb-3">
+                <div class="card-body position-relative">
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="@review.Customer.ProfilePictureUrl" alt="Customer Image" class="rounded-circle" width="30" height="30">
+                        <h5 class="card-title ml-2 mb-0">@review.Customer.FullName</h5>
+                    </div>
+                    <div class="context-end">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (i <= review.Rating)
+                            {
+                                <span class="star">&#9733;</span> 
+                            }
+                            else
+                            {
+                                <span class="star">&#9734;</span> 
+                            }
+                        }
+                    </div>
+                    <p class="card-text">@review.Content</p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Be the first to write a review.</p>
+    }
+    <div id="new-review">
+    </div>
+</div>
+<div>
+    @await Html.PartialAsync("_ReviewFormPartial", Model.ReviewInsertDTO)
+</div>
+<script src="~/js/additemtocart.js"></script>
+

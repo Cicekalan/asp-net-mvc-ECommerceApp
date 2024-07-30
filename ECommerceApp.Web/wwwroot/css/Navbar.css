@@ -1,0 +1,22 @@
+body {
+    padding-top: 50px; 
+}
+.navbar-brand {
+        font-weight: bold;
+    }
+    
+    .nav-item {
+        margin-left: 15px;
+    }
+    
+    @media (max-width: 800px) {
+        .nav-item {
+            margin-left: 0;
+            text-align: left;
+        }
+        .visible-on-small-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }

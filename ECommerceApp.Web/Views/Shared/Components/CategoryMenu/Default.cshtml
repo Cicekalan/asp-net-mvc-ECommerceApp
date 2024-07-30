@@ -1,0 +1,17 @@
+@model IEnumerable<Category>
+<h3 class="text-center">Categories</h3>
+<ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a asp-controller="Product" asp-action="Index" asp-route-categoryName="" >All Products</a> 
+            </li>
+    @foreach (var ct in Model)
+    {
+        if (ct != null) 
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a asp-controller="Product" asp-action="Index" asp-route-categoryName="@ct.Name">@ct.Name</a> 
+            </li>
+        }
+    }
+     
+</ul>

@@ -1,0 +1,6 @@
+@model UserInfo
+
+<a class="nav-link d-flex align-items-center" asp-controller="Account" asp-action="Logout" method="post">
+    <img src="@Model.ProfilePictureUrl" alt="Profile Picture" class="rounded-circle" style="width: 30px; height: 30px; margin-right: 10px;">
+    @Model.FullName
+</a>

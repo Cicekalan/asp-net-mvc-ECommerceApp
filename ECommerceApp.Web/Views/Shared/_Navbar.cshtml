@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ECommerceApp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Product" asp-action="Index">Products</a>
+                </li>
+                @if(User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Product" asp-action="AddProduct">Add Product</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Order" asp-action="MyOrders">My Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Order" asp-action="PurchasedItems">Purchased Items</a>
+                </li>
+                }
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 visible-on-small-screen">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item d-flex align-items-center">
+                        @await Component.InvokeAsync("User")
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item d-flex align-items-center">
+                            @await Component.InvokeAsync("CartItemCount")
+                    </li>
+                    <a class="nav-link" asp-controller="ShoppingCart" asp-action="Index">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge badge-pill badge-danger"></span>
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                        <form asp-controller="Account" asp-action="Logout" method="post">
+                            <button type="submit" class="btn btn-link">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </button>
+                        </form>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+</nav>

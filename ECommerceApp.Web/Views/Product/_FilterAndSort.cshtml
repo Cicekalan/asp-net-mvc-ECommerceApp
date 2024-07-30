@@ -1,0 +1,35 @@
+@model FilterViewModel
+
+<h3 class="text-center mt-4">Filter and Sort Products</h3>
+
+@if (ViewBag.CurrentPage == "Index")
+{
+    <form asp-action="@ViewBag.CurrentPage" method="get">
+        <div class="form-group">
+            <label for="minPrice">Min Price:</label>
+            <input type="number" class="form-control" step="0.01" id="minPrice" name="minPrice" value="@Model.MinPrice" />
+        </div>
+        <div class="form-group mt-2">
+            <label for="maxPrice">Max Price:</label>
+            <input type="number" class="form-control" step="0.01" id="maxPrice" name="maxPrice" value="@Model.MaxPrice" />
+        </div>
+        <input type="hidden" name="Sorted" value="true" />
+        <button type="submit" class="btn btn-primary mt-3">Filter</button>
+    </form>
+}
+else if (ViewBag.CurrentPage == "ProductsByCategory")
+{
+    <form asp-action="@ViewBag.CurrentPage" method="get">
+        <input type="hidden" name="categoryName" value="@ViewBag.CategoryName" />
+        <div class="form-group">
+            <label for="minPriceCategory">Min Price:</label>
+            <input type="number" class="form-control" step="0.01" id="minPriceCategory" name="minPrice" value="@Model.MinPrice" />
+        </div>
+        <div class="form-group mt-2">
+            <label for="maxPriceCategory">Max Price:</label>
+            <input type="number" class="form-control" step="0.01" id="maxPriceCategory" name="maxPrice" value="@Model.MaxPrice" />
+        </div>
+        <input type="hidden" name="Sorted" value="true" />
+        <button type="submit" class="btn btn-primary mt-3">Filter by Category</button>
+    </form>
+}

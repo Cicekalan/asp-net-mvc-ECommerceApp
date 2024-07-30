@@ -1,0 +1,57 @@
+@model Product
+
+@{
+    var averageRating = Model.Reviews.Any() ? Model.Reviews.Average(r => r.Rating) : 0;
+    var filledStars = (int)Math.Floor(averageRating);
+    var halfStar = (averageRating - filledStars) >= 0.5;
+
+}
+
+<link rel="stylesheet" href="~/css/ProductCard.css" />
+
+<div class="card">
+    <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Name">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a asp-controller="Seller" asp-action="Profile" asp-route-sellerId="@Model.Seller.Id"
+                class="d-flex align-items-center text-decoration-none">
+                <img src="@Model.Seller.ProfilePictureUrl" class="profile-picture rounded-circle"
+                    alt="@Model.Seller.FullName's Profile Picture">
+                <span class="ml-2">@Model.Seller.FullName</span>
+            </a>
+            <div class="d-flex">
+                <a asp-controller="Product" asp-action="Details" asp-route-productId="@Model.ProductId"
+                    class="btn btn-primary btn-half-size mr-2">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+                <button class="btn btn-success btn-half-size" onclick="addToCart(@Model.ProductId)">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+        </div>
+        <h5 class="card-title">@Model.Name</h5>
+            <div class="context-end">
+         @for (int i = 1; i <= 5; i++)
+        {
+            if (i <= filledStars)
+            {
+                <span class="star">&#9733;</span> 
+            }
+            else if (i == filledStars + 1 && halfStar)
+            {
+                <span class="star">&#9734;</span> 
+            }
+            else
+            {
+                <span class="star">&#9734;</span> 
+            }
+        }
+    </div>
+        <p class="card-text">@Model.Description</p>
+        <p class="card-text">
+            <strong>@Model.Price.ToString("C")</strong>
+        </p>
+    </div>
+</div>
+
+<script src="~/js/additemtocart.js"></script>

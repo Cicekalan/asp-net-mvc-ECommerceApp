@@ -1,0 +1,74 @@
+@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Orders";
+}
+<div class="container mt-5">
+    <h2 class="mb-4">Products Sold</h2>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Customer</th>
+                <th>Customer Address</th>
+                <th>Customer Mail</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Product</th>
+                <th scope="col">Total Amount</th>
+                <th scope="col">Order Items</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var order in Model)
+            {
+                var firstItem = order.OrderItems?.FirstOrDefault();
+                <tr>
+                    <td>
+                        <img src="@order.Customer.ProfilePictureUrl" class="profile-picture rounded-circle"
+                            alt="@order.Customer.FullName's Profile Picture" style="width: 30px; height: 30px;">
+                        @order.Seller.FullName
+                    </td>
+                    <td>
+                        @order.Customer.StreetAddress / @order.Customer.City
+                    </td>
+                    <td>
+                        @order.Customer.Email
+                    </td>
+                    <td>
+                        @order.OrderDate.ToString("yyyy-MM-dd HH:mm:ss")
+                    </td>
+                    <td>
+                        @if (firstItem != null)
+                        {
+                            <img src="@firstItem.Product.ImageUrl" alt="@firstItem.Product.Name" class="img-thumbnail"
+                                style="width: 50px; height: 50px; margin-right: 10px;" />
+                            <a asp-controller="Product" asp-action="Details"
+                                asp-route-productId="@firstItem.Product.ProductId">@firstItem.Product.Name</a>
+                        }
+                        else
+                        {
+                            <span>No items</span>
+                        }
+                    </td>
+                    <td>
+                        @order.TotalAmount.ToString("C")
+                    </td>
+                    <td>
+                        @if (order.OrderItems != null && order.OrderItems.Any())
+                        {
+                            <ul>
+                                @foreach (var item in order.OrderItems)
+                                {
+                                    <li>@item.Product.Name - @item.Quantity x @item.Price.ToString("C")</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <span>No items</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
