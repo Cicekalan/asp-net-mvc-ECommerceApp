@@ -3,4 +3,5 @@
 *.csproj linguist-language=C#
 *.sln linguist-language=C#
 *.cshtml linguist-language=C#
+*.scss linguist-language=C#
 
