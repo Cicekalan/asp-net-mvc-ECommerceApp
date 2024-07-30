@@ -66,6 +66,7 @@ $RECYCLE.BIN/
 
 # VS Code directory
 .vscode/
+.vs/
 
 # Windows Installer files
 *.cab
