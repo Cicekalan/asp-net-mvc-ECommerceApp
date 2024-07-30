@@ -1,0 +1,4 @@
+# Specify C# as the primary language
+*.cs linguist-language=C#
+*.csproj linguist-language=C#
+*.sln linguist-language=C#
