@@ -1,6 +1,7 @@
 # ECommerceApp
 
-ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integrated with the Iyzico payment gateway.
+ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integrated with the Iyzico payment gateway. This application supports both seller and customer functionalities, providing a comprehensive platform for managing products, orders, and payments.
+
 
 ## Technologies Used
 
@@ -61,10 +62,11 @@ ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integ
   
 ## Example Screenshots
 
-![Homepage](path/to/homepage-screenshot.png)
-![Product Page](path/to/product-page-screenshot.png)
-![Cart Page](path/to/cart-page-screenshot.png)
-![Checkout Page](path/to/checkout-page-screenshot.png)
+
+![Product Page](screenshots/Product.png)
+![MyOrder Page](screenshots/MyOrder.png)
+![ProductSold Page](screenshots/ProductsSold.png)
+![ShophingCart Page](screenshots/ShoppingCart.png)
 
 ## Sample Cards for Iyzico
 
