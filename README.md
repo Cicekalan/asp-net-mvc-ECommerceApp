@@ -90,6 +90,48 @@ ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integ
 | Troy             | 9792030000000000   |
 | American Express | 374427000000003    |
 
+## Directory Structure
+
+ECommerceApp/
+│
+├── ECommerceApp.Core/
+│ ├── Models/
+│ ├── Interfaces/
+│ ├── Result.cs
+│ └── ECommerceApp.Core.csproj
+│
+├── ECommerceApp.Infrastructure/
+│ ├── Repositories/
+│ ├── Services/
+│ ├── Data/
+│ │ ├── AppDbContext.cs
+│ │ ├── Configurations/
+│ └── ECommerceApp.Infrastructure.csproj
+│
+├── ECommerceApp.Application/
+│ ├── Interfaces/
+│ ├── Services/
+│ ├── Dtos/
+│ ├── Mapping/
+│ │ └── MappingApp.cs
+│ └── ECommerceApp.Application.csproj
+│
+├── ECommerceApp.Web/
+│ ├── Controllers/
+│ ├── Views/
+│ ├── Models/
+│ ├── wwwroot/
+│ │ ├── css/
+│ │ ├── js/
+│ │ ├── lib/
+│ │ └── images/
+│ ├── Components/
+│ ├── Program.cs
+│ ├── appsettings.json
+│ └── ECommerceApp.Web.csproj
+
+bash
+
 
 ## License
 
