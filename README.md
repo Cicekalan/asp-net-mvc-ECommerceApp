@@ -73,10 +73,10 @@ ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integ
 ## Example Screenshots
 
 
-![Product Page](screenshots/Product.png)
-![MyOrder Page](screenshots/MyOrder.png)
-![ProductSold Page](screenshots/ProductsSold.png)
-![ShophingCart Page](screenshots/ShoppingCart.png)
+- Product Page: ![Product Page](screenshots/Product.png)
+- MyOrder Page: ![MyOrder Page](screenshots/MyOrder.png)
+- ProductSold Page: ![ProductSold Page](screenshots/ProductsSold.png)
+- ShoppingCart Page: ![ShoppingCart Page](screenshots/ShoppingCart.png)
 
 ## Sample Cards for Iyzico
 
