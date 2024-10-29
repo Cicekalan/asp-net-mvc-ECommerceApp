@@ -19,7 +19,7 @@ ECommerceApp is an ASP.NET Core MVC application for an e-commerce platform integ
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Aaed517/asp-net-mvc-ECommerceApp.git
+    git clone https://github.com/cicekalan/asp-net-mvc-ECommerceApp.git
     cd ECommerceApp
     ```
 
